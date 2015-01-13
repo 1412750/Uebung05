@@ -2,18 +2,37 @@ package kraftwerk;
 
 import java.util.Collections;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Pumpe.
+ */
 public class Pumpe implements Runnable {
+	
+	/** The thread. */
 	private Thread thread;
+	
+	/** The leistung. */
 	private int leistung;
 	
+	/**
+	 * Instantiates a new pumpe.
+	 *
+	 * @param leistung the leistung
+	 */
 	public Pumpe(int leistung) {
 		this.leistung = leistung;
 	}
 	
+	/**
+	 * Instantiates a new pumpe.
+	 */
 	public Pumpe() {
 		this.leistung = 1;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
 	public void run() {
 		try {
 			Wasserelement wasser = null;
@@ -31,8 +50,12 @@ public class Pumpe implements Runnable {
 			System.out.println("Thread interrupted.");
 		}
 		System.out.println("Thread exiting.");
+		thread.interrupt();
 	}
 
+	/**
+	 * Start.
+	 */
 	public void start() {
 		if (this.thread == null) {
 			this.thread = new Thread(this);
@@ -41,6 +64,11 @@ public class Pumpe implements Runnable {
 	}
 	
 	
+	/**
+	 * Sets the leistung.
+	 *
+	 * @param leistung the new leistung
+	 */
 	public void setLeistung(int leistung) {
 		this.leistung = leistung;
 	}
