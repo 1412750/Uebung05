@@ -1,8 +1,12 @@
+/*
+ * 
+ */
 package kraftwerk;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Reaktor.
+ * Die Klasse Reaktor simuliert einen Reaktor in einem Kernkraftwerk mit den
+ * nötigen Funktionen.
+ * 
  */
 public class Reaktor implements Runnable {
 
@@ -15,20 +19,14 @@ public class Reaktor implements Runnable {
 	/** The tr. */
 	private volatile int tr = 10;
 
-	public Reaktor() {
-		this.wasserelement = wasserelement;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Runnable#run()
+	/**
+	 * Hier wird der Reaktor gestartet. Die run-Methode wird aus dem Interface
+	 * Runnable implementiert.
 	 */
 	public void run() {
 
 		try {
 			int zaehler = 0;
-			
 
 			while (true && tr < MAXIMALTEMPERATUR) {
 				Thread.sleep(1000);
@@ -36,7 +34,7 @@ public class Reaktor implements Runnable {
 				zaehler++;
 
 			}
-			
+
 		} catch (InterruptedException e) {
 			System.out.println("Thread interrupted.");
 		}
@@ -47,7 +45,7 @@ public class Reaktor implements Runnable {
 	}
 
 	/**
-	 * Start.
+	 * Hier wird der Thread gestartet, die für die Ausgabe benötigt wird.
 	 */
 	public void start() {
 		if (this.thread == null) {
@@ -57,7 +55,7 @@ public class Reaktor implements Runnable {
 	}
 
 	/**
-	 * Gets the tr.
+	 * Gibt die Temperatur des Reaktors aus.
 	 *
 	 * @return the tr
 	 */

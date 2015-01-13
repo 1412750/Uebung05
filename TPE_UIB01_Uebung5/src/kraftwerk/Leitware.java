@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package kraftwerk;
 
 // TODO: Auto-generated Javadoc

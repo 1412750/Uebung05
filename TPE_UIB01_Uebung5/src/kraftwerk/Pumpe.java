@@ -2,35 +2,41 @@ package kraftwerk;
 
 import java.util.Collections;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Pumpe.
+ * In der Klasse Pumpe umfasst die Funktionene einer Pumpe, z.B. die
+ * Pumpleistung, die für die Kühlung benötigt wird.
+ * 
+ * @author tomi
+ *
  */
 public class Pumpe implements Runnable {
-	
+
 	/** The thread. */
 	private Thread thread;
-	
+
 	/** The leistung. */
 	private int leistung;
-	
+
 	/**
-	 * Instantiates a new pumpe.
+	 * Hier ist der Konstruktor, welcher die Leistung beinhaltet.
 	 *
-	 * @param leistung the leistung
+	 * @param leistung
+	 *            the leistung
 	 */
 	public Pumpe(int leistung) {
 		this.leistung = leistung;
 	}
-	
+
 	/**
 	 * Instantiates a new pumpe.
 	 */
 	public Pumpe() {
 		this.leistung = 1;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {
@@ -40,11 +46,13 @@ public class Pumpe implements Runnable {
 				wasser = Kernkraftwerk.wasserkreislauf.get(0);
 				wasser.setTemperatur(Kernkraftwerk.reaktor.getTr());
 				Kernkraftwerk.wasserkreislauf.set(0, wasser);
-				int temperatur = Kernkraftwerk.tauscher1.tausche(Kernkraftwerk.wasserkreislauf.get(1), Kernkraftwerk.wasserkreislauf.get(10));
+				int temperatur = Kernkraftwerk.tauscher1.tausche(
+						Kernkraftwerk.wasserkreislauf.get(1),
+						Kernkraftwerk.wasserkreislauf.get(10));
 				Kernkraftwerk.wasserkreislauf.get(11).setTemperatur(temperatur);
 				Thread.sleep(1000 / this.leistung);
 				Collections.rotate(Kernkraftwerk.wasserkreislauf, 1);
-				
+
 			}
 		} catch (InterruptedException e) {
 			System.out.println("Thread interrupted.");
@@ -62,12 +70,12 @@ public class Pumpe implements Runnable {
 			this.thread.start();
 		}
 	}
-	
-	
+
 	/**
 	 * Sets the leistung.
 	 *
-	 * @param leistung the new leistung
+	 * @param leistung
+	 *            the new leistung
 	 */
 	public void setLeistung(int leistung) {
 		this.leistung = leistung;
