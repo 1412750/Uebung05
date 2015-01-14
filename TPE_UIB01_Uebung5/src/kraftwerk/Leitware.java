@@ -41,14 +41,5 @@ public class Leitware implements Runnable {
 		}
 	}
 	
-	
-	public void destroy() {
-		try {
-			this.thread.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
 
 }

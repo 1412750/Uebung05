@@ -31,7 +31,7 @@ public class Pumpe implements Runnable {
 	}
 
 	/**
-	 * Hier wird die Leistung der Pumpe festgelegt.
+	 * Parameterloser Konstruktor, die Leistung der Pumpe wird auf 1 festgelegt.
 	 */
 	
 	public Pumpe() {
@@ -39,7 +39,10 @@ public class Pumpe implements Runnable {
 	}
 
 	/**
-	 * Die Methode run() wird gestartet
+	 * Die Methode run() läuft solange bis die max. Temparatur erreicht ist
+	 * Es holt sich ein Wasserelement und setzt es auf den Wert des Reaktors
+	 * Durch den Wärmetauscher wird die Mitteltemperatur festgelegt
+	 * 
 	 */
 	
 	public void run() {

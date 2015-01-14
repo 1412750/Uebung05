@@ -25,6 +25,8 @@ public class Reaktor implements Runnable {
 	/**
 	 * Hier wird der Reaktor gestartet. Die run-Methode wird aus dem Interface
 	 * Runnable implementiert.
+	 * Solange die max. Temp nicht erreicht ist wird die Temparatur immer um 1
+	 * erhöht
 	 */
 	
 	public void run() {
