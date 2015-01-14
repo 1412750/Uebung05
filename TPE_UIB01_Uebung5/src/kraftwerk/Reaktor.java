@@ -28,7 +28,8 @@ public class Reaktor implements Runnable {
 		try {
 			int zaehler = 0;
 
-			while (true && tr < MAXIMALTEMPERATUR) {
+			while (Thread.currentThread().isInterrupted() && true
+					&& tr < MAXIMALTEMPERATUR) {
 				Thread.sleep(1000);
 				this.tr += 100;
 				zaehler++;
