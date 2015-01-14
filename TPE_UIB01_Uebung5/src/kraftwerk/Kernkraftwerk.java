@@ -7,32 +7,34 @@ import java.util.List;
  * Die Klasse Kernkraftwerk beinahltet die notwendigen Elemente: den Reaktor,
  * die Pumpe, die Wärmetauscher, usw.
  * 
- * @author tomi
- *
+ * @author Sovann Som 1326670
+ * @author Maximilian Czerwonka 1415407
+ * @author Stephen Kessler 1412750
+ * @version JDK8.0
  */
 public class Kernkraftwerk {
 
-	/** The wasserkreislauf. */
+	
 	public static List<Wasserelement> wasserkreislauf;
 
-	/** The reaktor. */
+	
 	public static Reaktor reaktor;
 
-	/** The pumpe. */
+	
 	public static Pumpe pumpe;
 
-	/** The tauscher1. */
+	
 	public static Waermetauscher tauscher1;
 
-	/** The tauscher2. */
+	
 	public static Waermetauscher tauscher2;
 
 	/**
-	 * Hier in der Main findet usnere Simulation statt. Hier wird die Pumpe für
+	 * Hier in der Main findet unsere Simulation statt. Hier wird die Pumpe für
 	 * den Antrieb des Reaktors gestartet.
 	 *
-	 * @param args
-	 *            the arguments
+	 * @param 
+	 *           
 	 */
 	public static void main(String args[]) {
 		wasserkreislauf = new ArrayList<Wasserelement>();

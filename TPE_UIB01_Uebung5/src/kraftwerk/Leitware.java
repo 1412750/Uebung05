@@ -3,29 +3,34 @@
  */
 package kraftwerk;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Leitware.
+ * 
+ * @author Sovann Som 1326670
+ * @author Maximilian Czerwonka 1415407
+ * @author Stephen Kessler 1412750
+ * @version JDK8.0
  */
+
 public class Leitware implements Runnable {
 	
-	/** The thread. */
+	
 	private Thread thread;
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Runnable#run()
-	 */
+	
 	public void run() {
 		try {
-			while (true) {
-				Thread.sleep(100);
+			while (Kernkraftwerk.reaktor.getTr() < Kernkraftwerk.reaktor.MAXIMALTEMPERATUR) {
+				Thread.sleep(10);
 				System.out.println("Temperatur Reaktor: " + Kernkraftwerk.reaktor.getTr() + " C"+
 						", Temperatur Rückfluss in Rhein " + Kernkraftwerk.wasserkreislauf.get(5).getTemperatur());
 			}
+			thread.interrupt();
 		} catch (InterruptedException e) {
 			System.out.println("Thread interrupted.");
 		}
-		System.out.println("Thread exiting.");
+		
 	}
 
 	/**

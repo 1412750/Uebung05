@@ -7,15 +7,21 @@ package kraftwerk;
  * Die Klasse Reaktor simuliert einen Reaktor in einem Kernkraftwerk mit den
  * nötigen Funktionen.
  * 
+ * @author Sovann Som 1326670
+ * @author Maximilian Czerwonka 1415407
+ * @author Stephen Kessler 1412750
+ * @version JDK8.0
+ * 
  */
 public class Reaktor implements Runnable {
 
 	/** The thread. */
 	private Thread thread;
 
-	final static int MAXIMALTEMPERATUR = 2878;
-	private boolean kernschmelze = false;
-	private Wasserelement wasserelement;
+	final int MAXIMALTEMPERATUR = 2878;
+	private final static int KOEFFIZIENT = 1000/42;
+	
+
 	/** The tr. */
 	private volatile int tr = 10;
 
@@ -26,24 +32,27 @@ public class Reaktor implements Runnable {
 	public void run() {
 
 		try {
-			int zaehler = 0;
 
-			while (Thread.currentThread().isInterrupted() && true
-					&& tr < MAXIMALTEMPERATUR) {
-				Thread.sleep(1000);
-				this.tr += 100;
-				zaehler++;
+			while (tr <= MAXIMALTEMPERATUR) {
+				Thread.sleep(10);
+				this.tr += 1;
+				
+				if(tr >= MAXIMALTEMPERATUR) {
+			
+					thread.interrupt();
+					
+				}
 
 			}
 
 		} catch (InterruptedException e) {
-			System.out.println("Thread interrupted.");
+			System.out.println("Kernschmelze");
 		}
 
-		System.out.println("Thread exiting.");
-		thread.interrupt();
-
+		
 	}
+
+	
 
 	/**
 	 * Hier wird der Thread gestartet, die für die Ausgabe benötigt wird.

@@ -6,7 +6,10 @@ import java.util.Collections;
  * In der Klasse Pumpe umfasst die Funktionene einer Pumpe, z.B. die
  * Pumpleistung, die für die Kühlung benötigt wird.
  * 
- * @author tomi
+ * @author Sovann Som 1326670
+ * @author Maximilian Czerwonka 1415407
+ * @author Stephen Kessler 1412750
+ * @version JDK8.0
  *
  */
 public class Pumpe implements Runnable {
@@ -31,18 +34,14 @@ public class Pumpe implements Runnable {
 	 * Instantiates a new pumpe.
 	 */
 	public Pumpe() {
-		this.leistung = 1;
+		this.leistung = 2;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Runnable#run()
-	 */
+	
 	public void run() {
 		try {
 			Wasserelement wasser = null;
-			while (true) {
+			while (Kernkraftwerk.reaktor.getTr() < Kernkraftwerk.reaktor.MAXIMALTEMPERATUR) {
 				wasser = Kernkraftwerk.wasserkreislauf.get(0);
 				wasser.setTemperatur(Kernkraftwerk.reaktor.getTr());
 				Kernkraftwerk.wasserkreislauf.set(0, wasser);
@@ -54,11 +53,12 @@ public class Pumpe implements Runnable {
 				Collections.rotate(Kernkraftwerk.wasserkreislauf, 1);
 
 			}
+			thread.interrupt();
 		} catch (InterruptedException e) {
 			System.out.println("Thread interrupted.");
 		}
-		System.out.println("Thread exiting.");
-		thread.interrupt();
+		
+		
 	}
 
 	/**

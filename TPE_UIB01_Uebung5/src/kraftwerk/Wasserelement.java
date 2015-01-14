@@ -6,6 +6,11 @@ package kraftwerk;
 // TODO: Auto-generated Javadoc
 /**
  * The Class Wasserelement.
+ * 
+ * @author Sovann Som 1326670
+ * @author Maximilian Czerwonka 1415407
+ * @author Stephen Kessler 1412750
+ * @version JDK8.0
  */
 public class Wasserelement {
 	
