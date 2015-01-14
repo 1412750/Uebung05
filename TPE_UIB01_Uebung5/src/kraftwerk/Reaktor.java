@@ -1,6 +1,3 @@
-/*
- * 
- */
 package kraftwerk;
 
 /**
@@ -15,20 +12,21 @@ package kraftwerk;
  */
 public class Reaktor implements Runnable {
 
-	/** The thread. */
+	
 	private Thread thread;
 
 	final int MAXIMALTEMPERATUR = 2878;
 	private final static int KOEFFIZIENT = 1000/42;
 	
 
-	/** The tr. */
+	
 	private volatile int tr = 10;
 
 	/**
 	 * Hier wird der Reaktor gestartet. Die run-Methode wird aus dem Interface
 	 * Runnable implementiert.
 	 */
+	
 	public void run() {
 
 		try {
@@ -57,6 +55,7 @@ public class Reaktor implements Runnable {
 	/**
 	 * Hier wird der Thread gestartet, die für die Ausgabe benötigt wird.
 	 */
+	
 	public void start() {
 		if (this.thread == null) {
 			this.thread = new Thread(this);
@@ -67,8 +66,8 @@ public class Reaktor implements Runnable {
 	/**
 	 * Gibt die Temperatur des Reaktors aus.
 	 *
-	 * @return the tr
 	 */
+	
 	public int getTr() {
 		return this.tr;
 	}

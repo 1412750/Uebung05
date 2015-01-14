@@ -1,9 +1,5 @@
-/*
- * 
- */
 package kraftwerk;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Wasserelement.
  * 
@@ -12,41 +8,40 @@ package kraftwerk;
  * @author Stephen Kessler 1412750
  * @version JDK8.0
  */
+
 public class Wasserelement {
 	
 	/** The temperatur. */
 	private volatile int temperatur;
 	
 	/**
-	 * Instantiates a new wasserelement.
-	 *
-	 * @param temperatur the temperatur
+	 * Die neue Temperatur wird initialisiert.
 	 */
+	
 	public Wasserelement(int temperatur) {
 		this.temperatur = temperatur;
 	}
 	
 	/**
-	 * Instantiates a new wasserelement.
+	 * Das Wasserelement wird initialisiert.
 	 */
+	
 	public Wasserelement() {
 		this.temperatur = 10;
 	}
 	
 	/**
-	 * Gets the temperatur.
-	 *
-	 * @return the temperatur
+	 * Hier bekommen wird die aktuelle Temperatur geliefert.
 	 */
+	
 	public int getTemperatur() {
 		return temperatur;
 	}
 
 	/**
-	 * Sets the temperatur.
-	 *
-	 * @param temperatur the new temperatur
+	 * Hier wird die Temperatur gesetzt.
 	 */
+	
 	public void setTemperatur(int temperatur) {
 		this.temperatur = temperatur;
 	}

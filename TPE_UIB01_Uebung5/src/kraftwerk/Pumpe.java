@@ -12,31 +12,35 @@ import java.util.Collections;
  * @version JDK8.0
  *
  */
+
 public class Pumpe implements Runnable {
 
-	/** The thread. */
+	
 	private Thread thread;
 
-	/** The leistung. */
+	
 	private int leistung;
 
 	/**
 	 * Hier ist der Konstruktor, welcher die Leistung beinhaltet.
-	 *
-	 * @param leistung
-	 *            the leistung
+	 * 
 	 */
+	
 	public Pumpe(int leistung) {
 		this.leistung = leistung;
 	}
 
 	/**
-	 * Instantiates a new pumpe.
+	 * Hier wird die Leistung der Pumpe festgelegt.
 	 */
+	
 	public Pumpe() {
 		this.leistung = 2;
 	}
 
+	/**
+	 * Die Methode run() wird gestartet
+	 */
 	
 	public void run() {
 		try {
@@ -53,7 +57,9 @@ public class Pumpe implements Runnable {
 				Collections.rotate(Kernkraftwerk.wasserkreislauf, 1);
 
 			}
+			
 			thread.interrupt();
+			
 		} catch (InterruptedException e) {
 			System.out.println("Thread interrupted.");
 		}
@@ -61,9 +67,7 @@ public class Pumpe implements Runnable {
 		
 	}
 
-	/**
-	 * Start.
-	 */
+	
 	public void start() {
 		if (this.thread == null) {
 			this.thread = new Thread(this);
@@ -72,11 +76,9 @@ public class Pumpe implements Runnable {
 	}
 
 	/**
-	 * Sets the leistung.
-	 *
-	 * @param leistung
-	 *            the new leistung
+	 * Hier wird die Leistung der Pumpe gesetzt.
 	 */
+	
 	public void setLeistung(int leistung) {
 		this.leistung = leistung;
 	}

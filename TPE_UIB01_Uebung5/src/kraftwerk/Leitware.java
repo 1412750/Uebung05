@@ -1,11 +1,8 @@
-/*
- * 
- */
 package kraftwerk;
 
 
 /**
- * The Class Leitware.
+ * In dieser Klasse wird die Temperatur gesteuert.
  * 
  * @author Sovann Som 1326670
  * @author Maximilian Czerwonka 1415407
@@ -34,8 +31,9 @@ public class Leitware implements Runnable {
 	}
 
 	/**
-	 * Start.
+	 * Der Thread wird mit der Methode start() gestartet.
 	 */
+	
 	public void start() {
 		if (this.thread == null) {
 			this.thread = new Thread(this);
@@ -43,9 +41,7 @@ public class Leitware implements Runnable {
 		}
 	}
 	
-	/**
-	 * Destroy.
-	 */
+	
 	public void destroy() {
 		try {
 			this.thread.join();

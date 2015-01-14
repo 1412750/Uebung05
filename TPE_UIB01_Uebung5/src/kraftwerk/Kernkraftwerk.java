@@ -12,6 +12,7 @@ import java.util.List;
  * @author Stephen Kessler 1412750
  * @version JDK8.0
  */
+
 public class Kernkraftwerk {
 
 	
@@ -31,11 +32,10 @@ public class Kernkraftwerk {
 
 	/**
 	 * Hier in der Main findet unsere Simulation statt. Hier wird die Pumpe für
-	 * den Antrieb des Reaktors gestartet.
-	 *
-	 * @param 
+	 * den Antrieb des Reaktors gestartet. 
 	 *           
 	 */
+	
 	public static void main(String args[]) {
 		wasserkreislauf = new ArrayList<Wasserelement>();
 		for (int i = 0; i < 12; i++) {
